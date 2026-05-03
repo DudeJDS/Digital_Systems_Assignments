@@ -1,4 +1,20 @@
 `timescale 1ns / 1ps
+/*=====================================================
+                        Lint
+    verilator -Wall --lint-only rtl/seven segment.sv
+                       Compile
+    iverilog -Wall -g2012 rtl/ seven_segment .sv tb/ wave_seven_segment .v
+                       Simulate
+    ./a.out
+                        Tests
+    pytest tests/test seven segment.py
+=======================================================*/ 
+/*=====================================================
+                        Backup
+    git add .
+    git commit -m "Describe what you changed"
+    git push
+=======================================================*/ 
 /* Seven - segment display decoder for hexadecimal digits.
 3 // Parameters:
 4 // ACTIVE_LOW - 1 for active - low LEDs ( for example , DE1 - SoC), 0 for active - high.
