@@ -11,11 +11,12 @@ module up_down_counter #(
     // Initialise count => initially count is not assigned i.e. xxxxxx
     initial count = '0;
     // We must properly size the constants Max and One
-    localparam logic [WIDTH-1:0] Max = WIDTH'(MAX); // => Take the integer value MAX and convert it into a WIDTH-bit binary num.
-    localparam logic [WIDTH-1:0] One = WIDTH'(1); 
+    localparam logic [WIDTH-1:0] Max = WIDTH'(MAX); // => Take the integer value MAX and
+                                                    // convert it into a WIDTH-bit binary number
+    localparam logic [WIDTH-1:0] One = WIDTH'(1);
 
     logic [WIDTH-1:0] next_count;
-    
+
     // State register (enable gated)
     always_ff @(posedge clk) begin
         if (enable)
@@ -24,7 +25,7 @@ module up_down_counter #(
 
     // Next state logic
     always_comb begin
-        // Increment logic 
+        // Increment logic
         if (up) begin // Note: In SystemVerilog an if without begin ... end can only control one statement
             if (count == Max)
                 next_count = '0;
@@ -36,6 +37,6 @@ module up_down_counter #(
                 next_count = Max;
             else
                 next_count = count - One;
-        end 
+        end
     end
 endmodule
