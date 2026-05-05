@@ -44,9 +44,9 @@ module restartable_rate_generator #(
             );
             // tick_qualifier is high when count reaches CYCLE_COUNT - 1.
             assign tick_qualifier = (count == CountWidth'(CYCLE_COUNT - 1));
-            // reset count when running is low or when tick is generated and we are running.
-            assign rst_count = ~running || (tick_qualifier && running);
-            assign enable_count = running; // count only when running is high.
+            // reset count when run is low
+            assign rst_count = ~run;
+            assign enable_count = run; // count only when run is high.
 
         end else begin : g_special
             // For CYCLE_COUNT = 1
