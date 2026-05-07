@@ -22,7 +22,7 @@ module pwm_generator #(
     );
 
     // Generate PWM output based on counter value and duty cycle
-    // Note: Can't cast DUTY_CYCLES to the same width as counter_value without 
+    // Note: Can't cast DUTY_CYCLES to the same width as counter_value without
     always_comb begin
         if (32'(counter_value) < DUTY_CYCLES)
             pwm_out = 1'b1; // Output high for duty cycle duration
