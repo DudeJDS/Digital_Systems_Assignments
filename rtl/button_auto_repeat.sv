@@ -12,7 +12,7 @@ module button_auto_repeat #(
 Goal 1: When a button is pressed briefly, emit a SINGLE pulse
 Goal 2: When it is held down emit an initial pulse immediately, then repeatedly emit pulses
         then repeatedly emit pulses after its button has been held high for HOLD_CYCLES
-/*================= Steps =================
+================= Steps =================
 (1) Detect the rising edge of button:
 rising_edge_detector produces a single cycle rise pulse (high logic) the moment button goes
 from low to high. -> Gives the immediate pulse on press
