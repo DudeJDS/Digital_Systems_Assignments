@@ -17,9 +17,7 @@
 `timescale 1ns / 1ps
 
 module user_top_watch_v1 #(
-    /* verilator lint_off UNUSEDPARAM */
     parameter int CYCLES_PER_SECOND = 50_000_000
-    /* verilator lint_on UNUSEDPARAM */
 ) (
     input logic clk,
     /* verilator lint_off UNUSED */
